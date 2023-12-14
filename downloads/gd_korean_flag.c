@@ -54,15 +54,63 @@ void draw_korean_flag(gdImagePtr img) {
     gdImageFilledEllipse(img, center_x, center_y, smaller_radius * 2, smaller_radius * 2, red);
 
     // 繪製八卦圖案（黑色）
-    int bar_width = (int)(width / 10);
-    int bar_height = (int)(height / 6);
+   int x1, y1, x2, y2, x3, y3;
+  {
+    int line_thickness = 100;
+    gdImageSetThickness(img, line_thickness);
+
+    int x1, y1, x2, y2, x3, y3;
 
     // 左上
-    gdImageFilledRectangle(img, 0, 0, bar_width, bar_height, black);
+    x1 = 0;
+        y1 = 600;
+        x2 = 1200;
+        y2 = 0;
+        gdImageLine(img, x1, y1, x2, y2, white);
+
+        x1 = 0;
+        y1 = 0;
+        x2 = 1200;
+        y2 = 600;
+        gdImageLine(img, x1, y1, x2, y2, white);
+    
     // 右上
-    gdImageFilledRectangle(img, width - bar_width, 0, width, bar_height, black);
+    x1 = 0;
+        y1 = 600;
+        x2 = 1200;
+        y2 = 0;
+        gdImageLine(img, x1, y1, x2, y2, white);
+
+        x1 = 0;
+        y1 = 0;
+        x2 = 1200;
+        y2 = 600;
+        gdImageLine(img, x1, y1, x2, y2, white);
+    
     // 左下
-    gdImageFilledRectangle(img, 0, height - bar_height, bar_width, height, black);
+    x1 = 0;
+        y1 = 600;
+        x2 = 1200;
+        y2 = 0;
+        gdImageLine(img, x1, y1, x2, y2, white);
+
+        x1 = 0;
+        y1 = 0;
+        x2 = 1200;
+        y2 = 600;
+        gdImageLine(img, x1, y1, x2, y2, white);
+    
     // 右下
-    gdImageFilledRectangle(img, width - bar_width, height - bar_height, width, height, black);
+    x1 = 0;
+        y1 = 600;
+        x2 = 1200;
+        y2 = 0;
+        gdImageLine(img, x1, y1, x2, y2, white);
+
+        x1 = 0;
+        y1 = 0;
+        x2 = 1200;
+        y2 = 600;
+        gdImageLine(img, x1, y1, x2, y2, white);
+    }
 }
