@@ -6,8 +6,8 @@ void draw_korean_flag(gdImagePtr img);
 
 int main() {
     // 設定圖片的寬度和高度
-    int width = 600;
-    int height = 400;
+    int width = 3600;
+    int height = 2 * width / 3;
 
     // 建立真彩色圖片
     gdImagePtr img = gdImageCreateTrueColor(width, height);
@@ -17,7 +17,7 @@ int main() {
     draw_korean_flag(img);
 
     // 輸出圖片到一個 PNG 文件
-    FILE *outputFile = fopen("korean_flag.png", "wb");
+    FILE *outputFile = fopen("./../images/korean_flag_in_gd.png", "wb");
     if (outputFile == NULL) {
         fprintf(stderr, "Error opening the output file.\n");
         return 1;
@@ -51,18 +51,32 @@ void draw_korean_flag(gdImagePtr img) {
 
     // 繪製紅色圓圈（太極圖案）
     int smaller_radius = (int)(circle_radius * 0.8);
-    gdImageFilledEllipse(img, center_x, center_y, smaller_radius * 2, smaller_radius * 2, red);
+    gdImageFilledEllipse(img, center_x, center_y, smaller_radius * 1, smaller_radius * 1, red);
 
     // 繪製八卦圖案（黑色）
-    int bar_width = (int)(width / 10);
-    int bar_height = (int)(height / 6);
+  int x1, y1, x2, y2, x3, y3;
+  {
+    int line_thickness = 100;
+    gdImageSetThickness(img, line_thickness);
 
-    // 左上
-    gdImageFilledRectangle(img, 0, 0, bar_width, bar_height, black);
-    // 右上
-    gdImageFilledRectangle(img, width - bar_width, 0, width, bar_height, black);
-    // 左下
-    gdImageFilledRectangle(img, 0, height - bar_height, bar_width, height, black);
-    // 右下
-    gdImageFilledRectangle(img, width - bar_width, height - bar_height, width, height, black);
+    int x1, y1, x2, y2, x3, y3;
+
+        x1 = ;
+        y1 = 600;
+        x2 = 1200;
+        y2 = 0;
+        gdImageLine(img, x1, y1, x2, y2, black);
+
+        x1 = 0;
+        y1 = 0;
+        x2 = 1200;
+        y2 = 600;
+        gdImageLine(img, x1, y1, x2, y2, black);
+
+    x1 = ;
+    y1 = 600;
+    x2 = 1200;
+    y2 = 0;
+    gdImageLine(img, x1, y1, x2, y2, black);
+    }
 }
