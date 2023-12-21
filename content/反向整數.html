@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,10 +142,37 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='W5.html'>Next</a> >> W5<br /><h1>About</h1>
-<p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite</a></p>
-<p></p>
-<br /> <a href='W5.html'>Next</a> >> W5</div>
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='列出所有質因數.html'>Next</a> >> 列出所有質因數<br /><h1>反向整數</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int reverse(int n) {
+    int d, y = 0;
+    while (n) {
+        d = n % 10;
+        if ((n &gt; 0 &amp;&amp; y &gt; (0x7fffffff - d) / 10) ||
+            (n &lt; 0 &amp;&amp; y &lt; ((signed)0x80000000 - d) / 10)) {
+            return 0;  
+        }
+        y = y * 10 + d;
+        n = n / 10;
+    }
+    return y;  
+}
+
+int main(void)
+{
+    int i = 123;
+    printf("Original integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    i = 208478933;
+    printf("\nOriginal integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    i = -73634;
+    printf("\nOriginal integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    return 0;
+}
+</pre>
+<p><img alt="" height="177" src="./../images/2.png" width="493"/></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='列出所有質因數.html'>Next</a> >> 列出所有質因數</div>
         
     <!-- footer -->
       <div class="container">

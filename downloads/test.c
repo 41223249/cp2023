@@ -15,13 +15,13 @@ int reverse(int n) {
 
 int main(void)
 {
-    int i = 123;
+    int i = 451;
     printf("Original integer: %d  ",i);
     printf("\nReverse integer: %d  ",reverse(i));
-    i = 208478933;
+    i = 456121245;
     printf("\nOriginal integer: %d  ",i);
     printf("\nReverse integer: %d  ",reverse(i));
-    i = -73634;
+    i = -789612;
     printf("\nOriginal integer: %d  ",i);
     printf("\nReverse integer: %d  ",reverse(i));
     return 0;
