@@ -1020,8 +1020,38 @@ int main() {
 <p>cd downloads</p>
 <p>cc motion_data.c</p>
 <p>./a.out</p>
-<h1>ANSIC</h1>
-<h2>2.反向整數</h2><h2>列出所有質因數</h2>
+<h1>W15</h1><h1>ANSIC</h1>
+<h2>反向整數</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int reverse(int n) {
+    int d, y = 0;
+    while (n) {
+        d = n % 10;
+        if ((n &gt; 0 &amp;&amp; y &gt; (0x7fffffff - d) / 10) ||
+            (n &lt; 0 &amp;&amp; y &lt; ((signed)0x80000000 - d) / 10)) {
+            return 0;  
+        }
+        y = y * 10 + d;
+        n = n / 10;
+    }
+    return y;  
+}
+
+int main(void)
+{
+    int i = 123;
+    printf("Original integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    i = 208478933;
+    printf("\nOriginal integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    i = -73634;
+    printf("\nOriginal integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    return 0;
+}
+</pre>
+<p><img alt="" height="177" src="/images/2.png" width="493"/></p><h2>列出所有質因數</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;math.h&gt;
