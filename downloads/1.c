@@ -5,7 +5,7 @@
   int main(void)
     {   
      //int n = 8; 
-     int n = 75; 
+     int n = 84651; 
     // int n = 18; 
      printf("All prime factors of %d are: ",n);
      if (n>0)
