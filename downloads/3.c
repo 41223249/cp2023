@@ -17,4 +17,3 @@ int main(void)
     printf("\n %.f seconds passed since the beginning of the month.\n\n", seconds);
     return 0;
 }
-

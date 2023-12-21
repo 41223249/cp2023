@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,66 +142,28 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W11 << <a href='W11.html'>Previous</a> <a href='W15.html'>Next</a> >> W15<br /><h1>W13</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
-#include &lt;stdio.h&gt;
- 
-// 主函式
-int main() {
-    // Open a file to write displacement and velocity data
-    FILE *outputFile = fopen("motion_data.txt", "w");
-    if (!outputFile) {
-        fprintf(stderr, "Failed to create data file.\n");
-        return 1;
-    }
- 
-    // Simulate motion for 10 seconds and calculate displacement and velocity, while writing data to the file
-    double x = 0.2;  // Initial displacement
-    double v = 0.0;  // Initial velocity
-    double dt = 0.01; // Time step
-    double t = 0.0;  // Time
- 
-    while (t &lt;= 10.0) {
-        double acceleration = (-10.0 * x - 0.5 * v) / 1.0; // Modified system parameters here
-        v += acceleration * dt;
-        x += v * dt;
- 
-        fprintf(outputFile, "%lf %lf %lf\n", t, x, v);
- 
-        t += dt;
-    }
- 
-    // Close the data file
-    fclose(outputFile);
- 
-    // Start a Gnuplot process using popen
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
-    if (!gnuplotPipe) {
-        fprintf(stderr, "Failed to start Gnuplot.\n");
-        return 1;
-    }
- 
-    // Use Gnuplot plotting commands, specify font and output as PNG
-    fprintf(gnuplotPipe, "set terminal pngcairo enhanced font 'default,10' size 800,400\n");
-    fprintf(gnuplotPipe, "set output './../images/motion_plot.png'\n");
-    fprintf(gnuplotPipe, "set title 'Displacement and Velocity vs. Time'\n");
-    fprintf(gnuplotPipe, "set xlabel 'Time (s)'\n");
-    fprintf(gnuplotPipe, "set ylabel 'Displacement (m)'\n");
-    fprintf(gnuplotPipe, "plot 'motion_data.txt' using 1:2 with lines lw 2 title 'Displacement', \
-                             'motion_data.txt' using 1:3 with lines lw 2 title 'Velocity'\n");
- 
-    // Close the Gnuplot process
-    fprintf(gnuplotPipe, "exit\n");
-    pclose(gnuplotPipe);
- 
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='反向整數.html'>Next</a> >> 反向整數<br /><h1>這個月過了幾秒</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t now;
+    time(&amp;now);
+
+    struct tm beg_month;
+    beg_month = *localtime(&amp;now);
+    beg_month.tm_hour = 0;
+    beg_month.tm_min = 0;
+    beg_month.tm_sec = 0;
+    beg_month.tm_mday = 1;
+
+    double seconds = difftime(now, mktime(&amp;beg_month));
+    printf("\n %.f seconds passed since the beginning of the month.\n\n", seconds);
     return 0;
-}</pre>
-<p><img alt="" src="https://replit.com/@41223249/cp2023#images/motion_plot.png"/><img alt="" height="250" src="./../images/motion_plot.png" width="500"/></p>
-<p>clear</p>
-<p>cd downloads</p>
-<p>cc motion_data.c</p>
-<p>./a.out</p>
-<br />W11 << <a href='W11.html'>Previous</a> <a href='W15.html'>Next</a> >> W15</div>
+}
+</pre>
+<p><img alt="" height="160" src="./../images/3.png" width="600"/><br/><br/></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='反向整數.html'>Next</a> >> 反向整數</div>
         
     <!-- footer -->
       <div class="container">

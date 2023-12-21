@@ -1087,7 +1087,28 @@ void draw_roc_flag(gdImagePtr img) {
 }
 </pre>
 <p><img alt="" height="333" src="/images/roc_flag_in_gd.png" width="500"/></p><h1>ANSIC</h1>
-<h2>反向整數</h2>
+<h2>這個月過了幾秒</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t now;
+    time(&amp;now);
+
+    struct tm beg_month;
+    beg_month = *localtime(&amp;now);
+    beg_month.tm_hour = 0;
+    beg_month.tm_min = 0;
+    beg_month.tm_sec = 0;
+    beg_month.tm_mday = 1;
+
+    double seconds = difftime(now, mktime(&amp;beg_month));
+    printf("\n %.f seconds passed since the beginning of the month.\n\n", seconds);
+    return 0;
+}
+</pre>
+<p><img alt="" height="160" src="/images/3.png" width="600"/><br/><br/></p><h2>反向整數</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 int reverse(int n) {
     int d, y = 0;
