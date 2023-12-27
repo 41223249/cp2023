@@ -960,7 +960,6 @@ return 1;
 <p>cd downloads</p>
 <p>cc hello.c -lgd -lm</p>
 <p>./a.out</p>
-<h1>W12</h1>
 <h1>W13</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
 #include &lt;stdio.h&gt;
@@ -1235,7 +1234,166 @@ void draw_roc_flag(gdImagePtr img) {
 
   circleLineIntersection(circle_x, circle_y, radius, x6, y6, x5, y5); 
   }</pre>
-<p><img alt="" height="97" src="/images/螢幕擷取畫面 2023-12-27 172544.png" width="303"/></p><h1>ANSIC</h1>
+<p><img alt="" height="97" src="/images/螢幕擷取畫面 2023-12-27 172544.png" width="303"/></p>
+<h1>c_EX</h1>
+<h2>ex</h2>
+<p>1.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Say Hello World!.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+ /* 印出 Hello */
+printf("Hello World!");
+}
+</pre>
+<p><img alt="" height="92" src="/images/c1.png" width="316"/></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Say Hello World! Bye Bye.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<p><img alt="" height="62" src="/images/c2.png" width="393"/></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+變數宣告的例子 3.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
+return 0;
+}</pre>
+<p><img alt="" height="67" src="/images/c3.png" width="442"/></p>
+<p>4.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+float a = 0.5;
+double b = 1.2;
+int c = 3;
+b = b + a + c;
+/* 輸出 a, b, c 到螢幕 */
+printf( " a = %3.1f, b = %3.1f, c = %d ", a ,b, c );
+}</pre>
+<p><img alt="" height="72" src="/images/c4.png" width="437"/></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+字元範例 1
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}</pre>
+<p><img alt="" height="67" src="/images/c5.png" width="485"/></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ digital - 1
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 64;
+int b = 0x40;
+long c = 64L;
+printf(“%d,%d,%d”, a, b, c );
+return 0;
+}</pre>
+<p><img alt="" height="46" src="/images/c6.png" width="491"/></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* =========================
+輸入一個整數
+========================= */
+#include &lt;stdio.h&gt;
+int main()
+{
+int i;
+printf("Input an integer:");
+scanf( "%d", &amp;i ); /* ch 前面加個 &amp;(位址運算元) */
+printf( "the number is %d", i );
+return 0;
+}</pre>
+<p><img alt="" height="71" src="/images/c7.png" width="351"/></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+基本運算範例.
+==================== */
+#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="142" src="/images/c8.png" width="268"/></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+關係運算元的範例.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<p><img alt="" height="325" src="/images/c9.png" width="270"/></p>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+位元運算元的範例.
+==================== */
+#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="183" src="/images/c10.png" width="275"/></p><h1>ANSIC</h1>
 <h2>計算球體的體積</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;     // Include the standard input/output header file.
 
@@ -1258,7 +1416,8 @@ return(0);   // Return 0 to indicate successful execution of the program.
 }</pre>
 <p><img alt="" height="87" src="/images/10.png" width="413"/></p>
 <p><video controls="controls" height="492" width="984">
-<source src="/images/10.mp4" type="video/mp4"/></video></p><h2>求任意數的平方</h2>
+<source src="/images/10.mp4" type="video/mp4"/></video></p>
+<h2>求任意數的平方</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 double square(double num)
@@ -1280,7 +1439,8 @@ int main()
 }</pre>
 <p><img alt="" height="143" src="/images/9.png" width="505"/></p>
 <p><video controls="controls" height="514" width="1028">
-<source src="/images/9.mp4" type="video/mp4"/></video></p><h2>計算從 1 到 n 的數位之和</h2>
+<source src="/images/9.mp4" type="video/mp4"/></video></p>
+<h2>計算從 1 到 n 的數位之和</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
 
 int sumOfRange(int);
@@ -1315,7 +1475,8 @@ int sumOfRange(int n1)
 }</pre>
 <p><img alt="" height="212" src="/images/8.png" width="607"/></p>
 <p><video controls="controls" height="414" width="828">
-<source src="/images/8.mp4" type="video/mp4"/></video></p><h2>簡單計算</h2>
+<source src="/images/8.mp4" type="video/mp4"/></video></p>
+<h2>簡單計算</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include the standard input/output header file.
 
 void main() {
@@ -1366,7 +1527,8 @@ void main() {
 <source src="/images/7.mp4" type="video/mp4"/></video></p>
 <p></p>
 <p></p>
-<p></p><h2>檢查三角形</h2>
+<p></p>
+<h2>檢查三角形</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include the standard input/output header file.
 
 int main()  
@@ -1397,7 +1559,8 @@ int main()
 </pre>
 <p><img alt="" height="208" src="/images/6.png" width="422"/></p>
 <p><video controls="controls" height="573" width="1146">
-<source src="/images/6.mp4" type="video/mp4"/></video></p><h2>檢查給定年份是否為閏年</h2>
+<source src="/images/6.mp4" type="video/mp4"/></video></p>
+<h2>檢查給定年份是否為閏年</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;   // Include the standard input/output header file.
 
 void main()
@@ -1417,7 +1580,8 @@ void main()
 }</pre>
 <p><img alt="" height="157" src="/images/5.png" width="285"/></p>
 <p><video controls="controls" height="480" width="960">
-<source src="/images/5.mp4" type="video/mp4"/></video></p><h2>現在時間</h2>
+<source src="/images/5.mp4" type="video/mp4"/></video></p>
+<h2>現在時間</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;time.h&gt;
 #include &lt;stdio.h&gt;  
 #include &lt;stdlib.h&gt;
@@ -1466,7 +1630,8 @@ int main(void)
 }
 </pre>
 <p><img alt="" height="160" src="/images/3.png" width="600"/><br/><video controls="controls" height="513" width="1026">
-<source src="/images/3.mp4" type="video/mp4"/></video></p><h2>反向整數</h2>
+<source src="/images/3.mp4" type="video/mp4"/></video></p>
+<h2>反向整數</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 int reverse(int n) {
     int d, y = 0;
@@ -1498,7 +1663,8 @@ int main(void)
 </pre>
 <p><img alt="" height="177" src="/images/2.png" width="493"/></p>
 <p><video controls="controls" height="579" width="1158">
-<source src="/images/2.mp4" type="video/mp4"/></video></p><h2>列出所有質因數</h2>
+<source src="/images/2.mp4" type="video/mp4"/></video></p>
+<h2>列出所有質因數</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;math.h&gt;
@@ -1534,7 +1700,8 @@ int main(void)
 <p><img alt="" src="https://replit.com/@41223249/cp2023#images/2023-12-21%20144720.png"/><img alt="" height="117" src="/images/1.png" width="432"/></p>
 <p><video controls="controls" height="577" width="1154">
 <source src="/images/1.mp4" type="video/mp4"/></video></p>
-<p><img alt="" src="/get_page/1.%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E8%B3%AA%E5%9B%A0%E6%95%B8/images/1.png"/></p><h1>Brython</h1>
+<p><img alt="" src="/get_page/1.%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E8%B3%AA%E5%9B%A0%E6%95%B8/images/1.png"/></p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
