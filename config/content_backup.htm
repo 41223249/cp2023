@@ -1021,15 +1021,24 @@ int main() {
 <p>./a.out</p>
 <h1>W15</h1>
 <p>1.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China
+// 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621
+// cc roc_flag_in_gd.c -lgd -lm to link with gd and math library
+// https://www.rapidtables.com/web/color/RGB_Color.html
+// 幾何形狀著色與繪圖練習
+// 以下 gd 繪圖程式嘗試畫出 ROC 國旗, 請根據下列程式內容完成後續的國旗繪圖
+#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
 
 void draw_roc_flag(gdImagePtr img);
+void draw_white_sun(gdImagePtr img, int x, int y, int size, int color);
 
 int main() {
+    // width 3: height 2
     int width = 1200;
-    int height = (int)(width * 2.0 / 3.0);
+    // 國旗長寬比為 3:2
+    int height = (int)(width*2.0 / 3.0);
 
     gdImagePtr img = gdImageCreateTrueColor(width, height);
     gdImageAlphaBlending(img, 0);
@@ -1051,42 +1060,48 @@ void draw_roc_flag(gdImagePtr img) {
     int width = gdImageSX(img);
     int height = gdImageSY(img);
     int red, white, blue;
-    int center_x = (int)(width / 4);
-    int center_y = (int)(height / 4);
-    int sun_radius = (int)(width / 8);
+    // 白日位於青天面積正中央, 因此中心點座標為長寬各 1/4 處
+    int center_x = (int)(width/4);
+    int center_y = (int)(height/4);
+    // gdImageFilledEllipse 需以長寬方向的 diameter 作圖
+    // 由於中央白日圓形的半徑為青天寬度的 1/8
+    // 因此中央白日圓形的直徑為青天寬度的 1/4, 也就是國旗寬度的 1/8
+    // 而且白日十二道光芒的外圍圓形其半徑也是國旗寬度的1/8
+    int sun_radius = (int)(width/8);
+    // 中央白日圓形的直徑等於十二道光芒外圍圓形的半徑
     int white_circle_dia = sun_radius;
-    int blue_circle_dia = white_circle_dia + white_circle_dia * 2 / 15;
-
-    red = gdImageColorAllocate(img, 255, 0, 0);
-    white = gdImageColorAllocate(img, 255, 255, 255);
-    blue = gdImageColorAllocate(img, 0, 0, 149);
-
+    // 中央藍色圓形半徑為中央白日的 1又 2/15
+    int blue_circle_dia = white_circle_dia +  white_circle_dia*2/15;
+    // 根據 https://www.moi.gov.tw/cp.aspx?n=10621 訂定國旗三種顏色值
+    red = gdImageColorAllocate(img, 255, 0, 0); // 紅色
+    white = gdImageColorAllocate(img, 255, 255, 255); // 白色
+    blue = gdImageColorAllocate(img, 0, 0, 149); // 藍色
+    // 根據畫布大小塗上紅色長方形區域
     gdImageFilledRectangle(img, 0, 0, width, height, red);
-    gdImageFilledRectangle(img, 0, 0, (int)(width / 2.0), (int)(height / 2.0), blue);
-
+    // 青天面積為整面國旗的 1/4, 也是採用長方形塗色
+    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue);
+    // 先設法以填色畫出六個白色堆疊菱形
+    draw_white_sun(img, center_x, center_y, sun_radius, white);
     // 利用一個藍色大圓與白色小圓畫出藍色環狀
     gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
     gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
 
-    // 不含太陽的部分
 
-    // 連接第二組ABED的白線
-    int ax = 429;
-    int ay = 125;
-    int bx = 279;
-    int by = 165;
-    int ex = 170;
-    int ey = 274;
-    int dx = 170;
-    int dy = 274;
 
-    gdImageLine(img, ax, ay, bx, by, white);
-    gdImageLine(img, bx, by, ex, ey, white);
-    gdImageLine(img, ex, ey, dx, dy, white);
-    gdImageLine(img, dx, dy, ax, ay, white);
+  // AB
+  gdImageLine(img, 429, 125, 279, 165, white);
+  // BE
+  gdImageLine(img, 279, 165, 170, 274, white);
+  // ED
+  gdImageLine(img, 170, 274, 170, 274, white);
+  // DA
+  gdImageLine(img, 170, 274, 429, 125, white);
 }
-</pre>
-<p><img alt="" height="333" src="/images/roc_flag_in_gd.png" width="500"/></p>
+void draw_white_sun(gdImagePtr img, int x, int y, int size, int color) {
+    // 實現 draw_white_sun 函數的內容
+    // 可以在此處繪製白日的內部圖案
+}</pre>
+<p><img caption="false" height="400" src="/images/roc_flag_in_gd_2.png" width="600"/></p>
 <p>2.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China 
 // 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621 
@@ -1234,9 +1249,165 @@ void draw_roc_flag(gdImagePtr img) {
 
   circleLineIntersection(circle_x, circle_y, radius, x6, y6, x5, y5); 
   }</pre>
-<p><img alt="" height="97" src="/images/螢幕擷取畫面 2023-12-27 172544.png" width="303"/></p>
-<h1>c_EX</h1>
-<h1>ANSIC</h1>
+<p><img alt="" height="97" src="/images/螢幕擷取畫面 2023-12-27 172544.png" width="303"/></p><h1>c_EX</h1>
+<h2>ex</h2>
+<p>1.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Say Hello World!.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+ /* 印出 Hello */
+printf("Hello World!");
+}
+</pre>
+<p><img alt="" height="92" src="/images/c1.png" width="316"/></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Say Hello World! Bye Bye.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<p><img alt="" height="62" src="/images/c2.png" width="393"/></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+變數宣告的例子 3.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
+return 0;
+}</pre>
+<p><img alt="" height="67" src="/images/c3.png" width="442"/></p>
+<p>4.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+float a = 0.5;
+double b = 1.2;
+int c = 3;
+b = b + a + c;
+/* 輸出 a, b, c 到螢幕 */
+printf( " a = %3.1f, b = %3.1f, c = %d ", a ,b, c );
+}</pre>
+<p><img alt="" height="72" src="/images/c4.png" width="437"/></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+字元範例 1
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}</pre>
+<p><img alt="" height="67" src="/images/c5.png" width="485"/></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ digital - 1
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 64;
+int b = 0x40;
+long c = 64L;
+printf(“%d,%d,%d”, a, b, c );
+return 0;
+}</pre>
+<p><img alt="" height="46" src="/images/c6.png" width="491"/></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* =========================
+輸入一個整數
+========================= */
+#include &lt;stdio.h&gt;
+int main()
+{
+int i;
+printf("Input an integer:");
+scanf( "%d", &amp;i ); /* ch 前面加個 &amp;(位址運算元) */
+printf( "the number is %d", i );
+return 0;
+}</pre>
+<p><img alt="" height="71" src="/images/c7.png" width="351"/></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+基本運算範例.
+==================== */
+#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="142" src="/images/c8.png" width="268"/></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+關係運算元的範例.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<p><img alt="" height="325" src="/images/c9.png" width="270"/></p>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+位元運算元的範例.
+==================== */
+#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="183" src="/images/c10.png" width="275"/></p><h1>ANSIC</h1>
 <h2>計算球體的體積</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;     // Include the standard input/output header file.
 
