@@ -1413,7 +1413,192 @@ printf("%d \n", ~a ); /* A 的補數運算 */
 }</pre>
 <p><img alt="" height="183" src="/images/c10.png" width="275"/></p>
 <h2>練習二</h2>
-<h1>ANSIC</h1>
+<p>1.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Logical NOT.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int a;
+a = 3;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
+}</pre>
+<p><img alt="" height="78" src="/images/c11.png" width="277"/></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Logical AND.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d\n", 1 &amp;&amp; 3 );
+printf("%d\n", 0 &amp;&amp; 0 );
+printf("%d\n", 2 &amp;&amp; 2 );
+}</pre>
+<p><img alt="" height="95" src="/images/c12.png" width="270"/></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ sizeof 的範例.
+==================== */
+ #include &lt;stdio.h&gt;
+void main()
+{
+char a;
+printf( " The size of int is %d \n", sizeof(int) );
+printf( " The size of char a is %d \n", sizeof(a) );
+}</pre>
+<p><img alt="" height="62" src="/images/c13.png" width="286"/></p>
+<p>4.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ if 與 else 的範例 2.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i; 
+printf( "input an integer:" );
+ scanf( "%d", &amp;i );
+if( i &lt; 100 )
+{
+printf( "i &lt; 100" );
+}
+else
+{
+if( (i &gt;= 100) &amp;&amp; (i &lt; 200) )
+{
+printf( "i &gt;= 100 and i &lt; 200'" );
+}
+else
+{
+printf("i &gt;= 200");
+}
+}
+}</pre>
+<p><img alt="" height="67" src="/images/c14.png" width="280"/></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+switch - case 的範例 1.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+char c;
+printf( "Input a char:" );
+scanf( "%c", &amp;c );
+switch( c )
+{
+case 'a':
+printf(" you pressed a ");
+break;
+case 'b':
+printf(" you pressed b ");
+break;
+case 'c':
+printf(" you pressed c ");
+break;
+default:
+printf(" not a, b, c ");
+break;
+}
+}</pre>
+<p><img alt="" height="72" src="/images/c15.png" width="342"/></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+switch - case 的範例 4.
+印出 odd, 或 even.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i;
+printf( "Input a number:" );
+scanf( "%d", &amp;i );
+i = i % 2;
+switch( i )
+{
+case 0:
+printf("Even!");
+break;
+case 1:
+printf("Odd!");
+break;
+}
+}</pre>
+<p><img alt="" height="90" src="/images/c16.png" width="291"/></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Program 2 - for
+ ==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+for ( i = 0, j = 10; i &lt; 6; i++, j++ )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+}
+}</pre>
+<p><img alt="" height="141" src="/images/c17.png" width="260"/></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+99 乘法.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int x, y;
+for( x = 1; x &lt;= 9; x++ )
+{
+for( y = 1; y &lt;= 9; y++ )
+{
+printf("%d ", x*y );
+}
+printf("\n");
+}
+return 0;
+}</pre>
+<p><img alt="" height="201" src="/images/c18.png" width="276"/></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ while 的範例 1.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+i = 0; j = 10; /* 迴圈外先設定初值 */
+while( i &lt; 6 )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+i++;
+j++; 
+}
+}</pre>
+<p><img alt="" height="138" src="/images/c19.png" width="257"/></p>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ do - while.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+i = 0; j = 10; /* 迴圈外先設定初值 */
+do
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+i++;
+j++; 
+}
+while( i &lt; 6 ); /* 檢查條件的地方 */
+}</pre>
+<p><img alt="" height="140" src="/images/c20.png" width="252"/></p><h1>ANSIC</h1>
 <h2>ex1</h2>
 <h4>計算球體的體積</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;     // Include the standard input/output header file.
@@ -1722,8 +1907,26 @@ int main(void)
 <p><video controls="controls" height="577" width="1154">
 <source src="/images/1.mp4" type="video/mp4"/></video></p>
 <h2>練習一</h2>
-<p><br/><br/><br/></p>
-<h1>期末總結</h1>
+<p>1.<span>將攝氏度轉換為華氏度</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;     // Include the standard input/output header file.
+
+float temp_f;     /* degrees fahrenheit */
+float temp_c;     /* degrees centigrade */
+char line_text[50];        /* a line of input */
+
+int main() {
+printf("Input a temperature (in Centigrade): ");  // Prompt the user to input a temperature in centigrade.
+fgets(line_text, sizeof(line_text), stdin);      // Read a line of input from the user and store it in 'line_text'.
+sscanf(line_text, "%f", &amp;temp_c);               // Convert the input from 'line_text' to a float and store it in 'temp_c'.
+
+temp_f = ((9.0 / 5.0) * temp_c) + 32.0;         // Convert temperature from centigrade to fahrenheit and store it in 'temp_f'.
+printf("%f degrees Fahrenheit.\n", temp_f);    // Print the temperature in fahrenheit.
+
+return(0);   // Return 0 to indicate successful execution of the program.
+}</pre>
+<p><img alt="" height="57" src="/images/11.png" width="367"/><br/><video controls="controls" height="641" width="1000">
+<source src="/images/11.mp4" type="video/mp4"/></video></p>
+<p></p><h1>期末總結</h1>
 <p>A.<span>是否</span><span>按照進度明確標示倉儲的改版歷程</span></p>
 <p><video controls="controls" height="379" width="758">
 <source src="/images/e1.mp4" type="video/mp4"/></video></p>
