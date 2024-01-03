@@ -1,4 +1,5 @@
 <h1>About</h1>
+<p></p>
 <p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite</a></p>
 <p></p>
 <h1>W5</h1>
@@ -1251,7 +1252,8 @@ void draw_roc_flag(gdImagePtr img) {
   }</pre>
 <p><img alt="" height="97" src="/images/螢幕擷取畫面 2023-12-27 172544.png" width="303"/></p>
 <p><video controls="controls" height="656" width="1312">
-<source src="/images/w15.mp4" type="video/mp4"/></video></p><h1>c_EX</h1>
+<source src="/images/w15.mp4" type="video/mp4"/></video></p>
+<h1>c_EX</h1>
 <h2>ex</h2>
 <p>1.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
@@ -1409,8 +1411,196 @@ printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
 printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
 printf("%d \n", ~a ); /* A 的補數運算 */
 }</pre>
-<p><img alt="" height="183" src="/images/c10.png" width="275"/></p><h1>ANSIC</h1>
-<h2>計算球體的體積</h2>
+<p><img alt="" height="183" src="/images/c10.png" width="275"/></p>
+<h2>練習二</h2>
+<p>1.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Logical NOT.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int a;
+a = 3;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
+}</pre>
+<p><img alt="" height="78" src="/images/c11.png" width="277"/></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Logical AND.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d\n", 1 &amp;&amp; 3 );
+printf("%d\n", 0 &amp;&amp; 0 );
+printf("%d\n", 2 &amp;&amp; 2 );
+}</pre>
+<p><img alt="" height="95" src="/images/c12.png" width="270"/></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ sizeof 的範例.
+==================== */
+ #include &lt;stdio.h&gt;
+void main()
+{
+char a;
+printf( " The size of int is %d \n", sizeof(int) );
+printf( " The size of char a is %d \n", sizeof(a) );
+}</pre>
+<p><img alt="" height="62" src="/images/c13.png" width="286"/></p>
+<p>4.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ if 與 else 的範例 2.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i; 
+printf( "input an integer:" );
+ scanf( "%d", &amp;i );
+if( i &lt; 100 )
+{
+printf( "i &lt; 100" );
+}
+else
+{
+if( (i &gt;= 100) &amp;&amp; (i &lt; 200) )
+{
+printf( "i &gt;= 100 and i &lt; 200'" );
+}
+else
+{
+printf("i &gt;= 200");
+}
+}
+}</pre>
+<p><img alt="" height="67" src="/images/c14.png" width="280"/></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+switch - case 的範例 1.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+char c;
+printf( "Input a char:" );
+scanf( "%c", &amp;c );
+switch( c )
+{
+case 'a':
+printf(" you pressed a ");
+break;
+case 'b':
+printf(" you pressed b ");
+break;
+case 'c':
+printf(" you pressed c ");
+break;
+default:
+printf(" not a, b, c ");
+break;
+}
+}</pre>
+<p><img alt="" height="72" src="/images/c15.png" width="342"/></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+switch - case 的範例 4.
+印出 odd, 或 even.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i;
+printf( "Input a number:" );
+scanf( "%d", &amp;i );
+i = i % 2;
+switch( i )
+{
+case 0:
+printf("Even!");
+break;
+case 1:
+printf("Odd!");
+break;
+}
+}</pre>
+<p><img alt="" height="90" src="/images/c16.png" width="291"/></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Program 2 - for
+ ==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+for ( i = 0, j = 10; i &lt; 6; i++, j++ )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+}
+}</pre>
+<p><img alt="" height="141" src="/images/c17.png" width="260"/></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+99 乘法.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int x, y;
+for( x = 1; x &lt;= 9; x++ )
+{
+for( y = 1; y &lt;= 9; y++ )
+{
+printf("%d ", x*y );
+}
+printf("\n");
+}
+return 0;
+}</pre>
+<p><img alt="" height="201" src="/images/c18.png" width="276"/></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ while 的範例 1.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+i = 0; j = 10; /* 迴圈外先設定初值 */
+while( i &lt; 6 )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+i++;
+j++; 
+}
+}</pre>
+<p><img alt="" height="138" src="/images/c19.png" width="257"/></p>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ do - while.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+i = 0; j = 10; /* 迴圈外先設定初值 */
+do
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+i++;
+j++; 
+}
+while( i &lt; 6 ); /* 檢查條件的地方 */
+}</pre>
+<p><img alt="" height="140" src="/images/c20.png" width="252"/></p><h1>ANSIC</h1>
+<h2>ex1</h2>
+<h4>計算球體的體積</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;     // Include the standard input/output header file.
 
 float myradius;          /* radius of the sphere */
@@ -1433,7 +1623,7 @@ return(0);   // Return 0 to indicate successful execution of the program.
 <p><img alt="" height="87" src="/images/10.png" width="413"/></p>
 <p><video controls="controls" height="492" width="984">
 <source src="/images/10.mp4" type="video/mp4"/></video></p>
-<h2>求任意數的平方</h2>
+<h4>求任意數的平方</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 double square(double num)
@@ -1456,7 +1646,7 @@ int main()
 <p><img alt="" height="143" src="/images/9.png" width="505"/></p>
 <p><video controls="controls" height="514" width="1028">
 <source src="/images/9.mp4" type="video/mp4"/></video></p>
-<h2>計算從 1 到 n 的數位之和</h2>
+<h4>計算從 1 到 n 的數位之和</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
 
 int sumOfRange(int);
@@ -1492,7 +1682,7 @@ int sumOfRange(int n1)
 <p><img alt="" height="212" src="/images/8.png" width="607"/></p>
 <p><video controls="controls" height="414" width="828">
 <source src="/images/8.mp4" type="video/mp4"/></video></p>
-<h2>簡單計算</h2>
+<h4>簡單計算</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include the standard input/output header file.
 
 void main() {
@@ -1544,7 +1734,7 @@ void main() {
 <p></p>
 <p></p>
 <p></p>
-<h2>檢查三角形</h2>
+<h4>檢查三角形</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include the standard input/output header file.
 
 int main()  
@@ -1576,7 +1766,7 @@ int main()
 <p><img alt="" height="208" src="/images/6.png" width="422"/></p>
 <p><video controls="controls" height="573" width="1146">
 <source src="/images/6.mp4" type="video/mp4"/></video></p>
-<h2>檢查給定年份是否為閏年</h2>
+<h4>檢查給定年份是否為閏年</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;   // Include the standard input/output header file.
 
 void main()
@@ -1597,7 +1787,7 @@ void main()
 <p><img alt="" height="157" src="/images/5.png" width="285"/></p>
 <p><video controls="controls" height="480" width="960">
 <source src="/images/5.mp4" type="video/mp4"/></video></p>
-<h2>現在時間</h2>
+<h4>現在時間</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;time.h&gt;
 #include &lt;stdio.h&gt;  
 #include &lt;stdlib.h&gt;
@@ -1624,7 +1814,7 @@ int main(void)
 <p><img alt="" height="77" src="/images/4.png" width="492"/></p>
 <p><video controls="controls" height="557" width="1114">
 <source src="/images/4.mp4" type="video/mp4"/></video></p>
-<h2>這個月過了幾秒</h2>
+<h4>這個月過了幾秒</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;time.h&gt;
 
@@ -1647,7 +1837,7 @@ int main(void)
 </pre>
 <p><img alt="" height="160" src="/images/3.png" width="600"/><br/><video controls="controls" height="513" width="1026">
 <source src="/images/3.mp4" type="video/mp4"/></video></p>
-<h2>反向整數</h2>
+<h4>反向整數</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 int reverse(int n) {
     int d, y = 0;
@@ -1680,7 +1870,7 @@ int main(void)
 <p><img alt="" height="177" src="/images/2.png" width="493"/></p>
 <p><video controls="controls" height="579" width="1158">
 <source src="/images/2.mp4" type="video/mp4"/></video></p>
-<h2>列出所有質因數</h2>
+<h4>列出所有質因數</h4>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;math.h&gt;
@@ -1716,7 +1906,24 @@ int main(void)
 <p><img alt="" src="https://replit.com/@41223249/cp2023#images/2023-12-21%20144720.png"/><img alt="" height="117" src="/images/1.png" width="432"/></p>
 <p><video controls="controls" height="577" width="1154">
 <source src="/images/1.mp4" type="video/mp4"/></video></p>
-<p><img alt="" src="/get_page/1.%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E8%B3%AA%E5%9B%A0%E6%95%B8/images/1.png"/></p>
+<h2>練習一</h2>
+<p><br/><br/><br/></p>
+<h1>期末總結</h1>
+<p>A.<span>是否</span><span>按照進度明確標示倉儲的改版歷程</span></p>
+<p><video controls="controls" height="379" width="758">
+<source src="/images/e1.mp4" type="video/mp4"/></video></p>
+<p>B.<span>是否根據 </span><span>IPv4 與 IPv6</span><span><span> </span>網路環境設定進行作法討論</span></p>
+<p><video controls="controls" height="422" poster="/images/IPV4跟6網路設定.mp4" width="844">
+<source src="/images/IPV4跟6網路設定.mp4" type="video/mp4"/></video></p>
+<p>C.<span>是否就</span><span><span> </span>Replit、s.cycu.org 與 localhost</span><span><span> </span>情境下對個人與分組倉儲進行設定操作</span></p>
+<p><span>D: 是否完成<a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a><span>中的 Exercises</span></span></p>
+<p><span><span><video controls="controls" height="641" poster="/images/D.mp4" width="1000">
+<source src="/images/D.mp4" type="video/mp4"/></video></span></span></p>
+<p><span><span>E: 是否完成 <a href="https://mde.tw/cpnote/content/w2-w5.html">w2-w5</a><span><span> </span>週任務中的 Exercises</span></span></span></p>
+<p><span><span><span>F: 是否完成 <a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7</a><span><span> </span>週任務中的練習一與練習二</span></span></span></span></p>
+<p><span><span><span><span>G: 是否完成 C 結合 gd 繪圖程式庫, 畫出 <a href="https://en.wikipedia.org/wiki/Flag_of_China">PROC</a><span>(</span><a href="https://en.wikipedia.org/wiki/Flag_of_China#/media/File:Flag_of_China_(construction_sheet).svg">規格</a><span>),<span> </span></span><a href="https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom">United Kingdom</a><span>(</span><a href="https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom#/media/File:Flag_of_the_United_Kingdom_(1-2)_(construction_sheet).svg">規格</a><span>),<span> </span></span><a href="https://en.wikipedia.org/wiki/Flag_of_Japan">Japan</a><span>(</span><a href="https://en.wikipedia.org/wiki/Flag_of_Japan#/media/File:Construction_sheet_of_the_Japanese_flag_EN.svg">規格</a><span>)與<span> </span></span><a href="https://en.wikipedia.org/wiki/Flag_of_South_Korea">South Korea</a><span>(</span><a href="https://en.wikipedia.org/wiki/Flag_of_South_Korea#/media/File:Flag_of_South_Korea_(construction_sheet).svg">規格</a><span>) Flags</span></span></span></span></span></p>
+<p><span><span><span><span><span>H: 是否完成 w16 Final Project</span></span></span></span></span></p>
+<p></p>
 <h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>

@@ -1,0 +1,502 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cmsite</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>41223249 cp2023</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">41223249 cp2023</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li><a href='W5.html'>W5</a><li class='has-children'><a href='W6-W7.html'>W6-W7</a><ul class='dropdown'><li><a href='Korean.html'>Korean</a><li><a href='PROC.html'>PROC</a><li><a href='UK.html'>UK</a><li><a href='Japan.html'>Japan</a><li><a href='USA.html'>USA</a><li><a href='ROC.html'>ROC</a></li></ul><li><a href='W11.html'>W11</a><li><a href='W13.html'>W13</a><li><a href='W15.html'>W15</a><li class='has-children'><a href='c_EX.html'>c_EX</a><ul class='dropdown'><li><a href='ex.html'>ex</a><li><a href='練習二.html'>練習二</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='ex1.html'>ex1</a><li><a href='練習一.html'>練習一</a></li></ul><li><a href='期末總結.html'>期末總結</a><li><a href='Brython.html'>Brython</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='練習一.html'>Next</a> >> 練習一<br /><h1>ex1</h1>
+<h4>計算球體的體積</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;     // Include the standard input/output header file.
+
+float myradius;          /* radius of the sphere */
+float myvolume;          /* volume of the sphere (to be computed) */
+char line_text[50];      /* a line from the keyboard */
+
+/* 圓周率pi的值，保留50位小數，來自維基百科 */
+const float PI = 3.14159265358979323846264338327950288419716939937510;
+
+int main() {
+printf("Input the radius of the sphere : ");  // Prompt the user to input the radius of the sphere.
+fgets(line_text, sizeof(line_text), stdin);  // Read a line of input from the user and store it in 'line_text'.
+sscanf(line_text, "%f", &amp;myradius);         // Convert the input from 'line_text' to a float and store it in 'myradius'.
+
+myvolume = (4.0 / 3.0) * PI * (myradius * myradius * myradius);  /* Calculate the volume of the sphere using the formula. */
+printf("The volume of sphere is %f.\n", myvolume);  // Print the calculated volume of the sphere.
+
+return(0);   // Return 0 to indicate successful execution of the program.
+}</pre>
+<p><img alt="" height="87" src="./../images/10.png" width="413"/></p>
+<p><video controls="controls" height="492" width="984">
+<source src="./../images/10.mp4" type="video/mp4"/></video></p>
+<h4>求任意數的平方</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+double square(double num)
+{
+    return (num * num);
+}
+int main()
+{
+    int num;
+    double n;
+  printf("\n\n Function : find square of any number :\n");
+  printf("------------------------------------------------\n");	
+
+    printf("Input any number for square : ");
+    scanf("%d", &amp;num);
+    n = square(num);
+    printf("The square of %d is : %.2f\n", num, n); 
+    return 0;
+}</pre>
+<p><img alt="" height="143" src="./../images/9.png" width="505"/></p>
+<p><video controls="controls" height="514" width="1028">
+<source src="./../images/9.mp4" type="video/mp4"/></video></p>
+<h4>計算從 1 到 n 的數位之和</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+
+int sumOfRange(int);
+
+int main() 
+{
+   int n1;
+   int sum;
+  printf("\n\n Recursion : calculate the sum of numbers from 1 to n :\n");
+  printf("-----------------------------------------------------------\n");    
+
+   printf(" Input the last number of the range starting from 1 : ");
+   scanf("%d", &amp;n1);
+
+   sum = sumOfRange(n1); 
+   printf("\n The sum of numbers from 1 to %d : %d\n\n", n1, sum);
+
+   return (0);
+}
+
+int sumOfRange(int n1) 
+{
+   int res;
+   if (n1 == 1) 
+   {
+      return (1);
+   } else 
+   {
+      res = n1 + sumOfRange(n1 - 1); //calling the function sumOfRange itself
+   }
+   return (res);
+}</pre>
+<p><img alt="" height="212" src="./../images/8.png" width="607"/></p>
+<p><video controls="controls" height="414" width="828">
+<source src="./../images/8.mp4" type="video/mp4"/></video></p>
+<h4>簡單計算</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include the standard input/output header file.
+
+void main() {
+  int num1,num2,opt;  // Declare variables to store user input and operation choice.
+
+  // Prompt user for two integers and store them.
+  printf("Enter the first Integer :");
+  scanf("%d",&amp;num1);
+  printf("Enter the second Integer :");
+  scanf("%d",&amp;num2);
+
+  // Display the menu for operation choice.
+  printf("\nInput your option :\n");
+  printf("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n");
+  scanf("%d",&amp;opt);  // Read and store the user's choice.
+
+  switch(opt) {  // Start a switch statement based on the user's choice.
+    case 1:
+      printf("The Addition of  %d and %d is: %d\n",num1,num2,num1+num2);  // Perform addition and print result.
+      break;
+
+    case 2:
+      printf("The Substraction of %d  and %d is: %d\n",num1,num2,num1-num2);  // Perform subtraction and print result.
+      break;
+
+    case 3:
+      printf("The Multiplication of %d  and %d is: %d\n",num1,num2,num1*num2);  // Perform multiplication and print result.
+      break;  
+
+    case 4:
+      if(num2==0) {
+        printf("The second integer is zero. Divide by zero.\n");  // Handle division by zero.
+      } else {
+        printf("The Division of %d  and %d is : %d\n",num1,num2,num1/num2);  // Perform division and print result.
+      }  
+      break;
+
+    case 5: 
+      break;  // Exit the program.
+
+    default:
+      printf("Input correct option\n");  // Display error message for invalid input.
+      break; 
+  }
+}</pre>
+<p><img alt="" height="241" src="./../images/7.png" width="407"/></p>
+<p><video controls="controls" height="434" width="868">
+<source src="./../images/7.mp4" type="video/mp4"/></video></p>
+<p></p>
+<p></p>
+<p></p>
+<h4>檢查三角形</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include the standard input/output header file.
+
+int main()  
+{  
+    int sidea, sideb, sidec; // Declare variables for the sides of the triangle.
+
+    /* 
+     * Reads all sides of a triangle 
+     */  
+    printf("Input three sides of triangle: ");  // Prompt user for input.
+    scanf("%d %d %d", &amp;sidea, &amp;sideb, &amp;sidec);  // Read and store the sides of the triangle.
+
+    if(sidea==sideb &amp;&amp; sideb==sidec) // Check if all sides are equal.  
+    {  
+        printf("This is an equilateral triangle.\n");  // Print message for equilateral triangle.
+    }  
+    else if(sidea==sideb || sidea==sidec || sideb==sidec) // Check if two sides are equal.  
+    {  
+        printf("This is an isosceles triangle.\n");  // Print message for isosceles triangle.
+    }  
+    else // If no sides are equal.  
+    {  
+        printf("This is a scalene triangle.\n");  // Print message for scalene triangle.
+    }  
+
+    return 0;  
+} 
+</pre>
+<p><img alt="" height="208" src="./../images/6.png" width="422"/></p>
+<p><video controls="controls" height="573" width="1146">
+<source src="./../images/6.mp4" type="video/mp4"/></video></p>
+<h4>檢查給定年份是否為閏年</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;   // Include the standard input/output header file.
+
+void main()
+{
+    int chk_year;   // Declare an integer variable 'chk_year'.
+
+    printf("Input a year :");   // Prompt the user to input a year.
+    scanf("%d", &amp;chk_year);   // Read and store the user's input in 'chk_year'.
+    if ((chk_year % 400) == 0)   // Check if 'chk_year' is divisible by 400 with no remainder.
+        printf("%d is a leap year.\n", chk_year);   // Print a message indicating that 'chk_year' is a leap year.
+    else if ((chk_year % 100) == 0)   // Check if 'chk_year' is divisible by 100 with no remainder.
+        printf("%d is not a leap year.\n", chk_year);   // Print a message indicating that 'chk_year' is not a leap year.
+    else if ((chk_year % 4) == 0)   // Check if 'chk_year' is divisible by 4 with no remainder.
+        printf("%d is a leap year.\n", chk_year);   // Print a message indicating that 'chk_year' is a leap year.
+    else
+        printf("%d is not a leap year \n", chk_year);   // Print a message indicating that 'chk_year' is not a leap year.
+}</pre>
+<p><img alt="" height="157" src="./../images/5.png" width="285"/></p>
+<p><video controls="controls" height="480" width="960">
+<source src="./../images/5.mp4" type="video/mp4"/></video></p>
+<h4>現在時間</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;time.h&gt;
+#include &lt;stdio.h&gt;  
+#include &lt;stdlib.h&gt;
+
+int main(void)
+{
+    time_t cur_time;
+    char* cur_t_string;
+    cur_time = time(NULL);
+    if (cur_time == ((time_t)-1))
+    {
+        (void) fprintf(stderr, "Failure to get the current date and time.\n");
+        exit(EXIT_FAILURE);
+    }
+    cur_t_string = ctime(&amp;cur_time); //convert to local time format
+    if (cur_t_string == NULL)
+    {
+        (void) fprintf(stderr, "Failure to convert the current date and time.\n");
+        exit(EXIT_FAILURE);
+    }
+    (void) printf("\n The Current time is : %s \n", cur_t_string);
+    exit(EXIT_SUCCESS);
+}</pre>
+<p><img alt="" height="77" src="./../images/4.png" width="492"/></p>
+<p><video controls="controls" height="557" width="1114">
+<source src="./../images/4.mp4" type="video/mp4"/></video></p>
+<h4>這個月過了幾秒</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t now;
+    time(&amp;now);
+
+    struct tm beg_month;
+    beg_month = *localtime(&amp;now);
+    beg_month.tm_hour = 0;
+    beg_month.tm_min = 0;
+    beg_month.tm_sec = 0;
+    beg_month.tm_mday = 1;
+
+    double seconds = difftime(now, mktime(&amp;beg_month));
+    printf("\n %.f seconds passed since the beginning of the month.\n\n", seconds);
+    return 0;
+}
+</pre>
+<p><img alt="" height="160" src="./../images/3.png" width="600"/><br/><video controls="controls" height="513" width="1026">
+<source src="./../images/3.mp4" type="video/mp4"/></video></p>
+<h4>反向整數</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int reverse(int n) {
+    int d, y = 0;
+    while (n) {
+        d = n % 10;
+        if ((n &gt; 0 &amp;&amp; y &gt; (0x7fffffff - d) / 10) ||
+            (n &lt; 0 &amp;&amp; y &lt; ((signed)0x80000000 - d) / 10)) {
+            return 0;  
+        }
+        y = y * 10 + d;
+        n = n / 10;
+    }
+    return y;  
+}
+
+int main(void)
+{
+    int i = 123;
+    printf("Original integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    i = 208478933;
+    printf("\nOriginal integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    i = -73634;
+    printf("\nOriginal integer: %d  ",i);
+    printf("\nReverse integer: %d  ",reverse(i));
+    return 0;
+}
+</pre>
+<p><img alt="" height="177" src="./../images/2.png" width="493"/></p>
+<p><video controls="controls" height="579" width="1158">
+<source src="./../images/2.mp4" type="video/mp4"/></video></p>
+<h4>列出所有質因數</h4>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;math.h&gt;
+
+  int main(void)
+    {   
+     //int n = 8; 
+     int n = 84651; 
+    // int n = 18; 
+     printf("All prime factors of %d are: ",n);
+     if (n&gt;0)
+    {	
+       while (n%2==0) 
+        { 
+            printf("2 "); 
+            n /= 2; 
+        } 
+
+        for (int i = 3; i &lt;= sqrt(n); i+= 2) 
+        { 
+            while (n%i == 0) 
+            { 
+                printf("%d ",i); 
+                n /= i; 
+            } 
+        } 
+        if (n &gt; 2) 
+            printf("%d ",n); 
+       }
+       return 0;
+  }
+</pre>
+<p><img alt="" src="https://replit.com/@41223249/cp2023#images/2023-12-21%20144720.png"/><img alt="" height="117" src="./../images/1.png" width="432"/></p>
+<p><video controls="controls" height="577" width="1154">
+<source src="./../images/1.mp4" type="video/mp4"/></video></p>
+<br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='練習一.html'>Next</a> >> 練習一</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
